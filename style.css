@@ -1,0 +1,273 @@
+:root {
+  --dot: hsl(1, 90%, 64%);
+  --chessClub: hsl(219, 85%, 26%);
+  --background: hsl(210, 60%, 98%);
+  --lightGrayishBlue1: hsl(211, 68%, 94%);
+  --lightGrayishBlue2: hsl(205, 33%, 90%);
+  --time: hsl(219, 14%, 63%);
+  --darkGrayishBlue: hsl(219, 12%, 42%);
+  --name: hsl(224, 21%, 14%);
+}
+
+@font-face {
+  font-family: PlusJakartaSansMedium;
+  src: url(./assets/fonts/static/PlusJakartaSans-Medium.ttf);
+}
+
+@font-face {
+  font-family: PlusJakartaSansExtraBold;
+  src: url(./assets/fonts/static/PlusJakartaSans-ExtraBold.ttf);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: PlusJakartaSansVariable;
+  src: url(./assets/fonts/PlusJakartaSans-VariableFont_wght.ttf);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: PlusJakartaSansVariable;
+  color: var(--name);
+}
+
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+img,
+picture {
+  min-width: 50px;
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--darkGrayishBlue);
+  font-family: PlusJakartaSansMedium;
+}
+
+h1 {
+  font-family: PlusJakartaSansExtraBold;
+  font-size: 24px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.container {
+  background: var(--background);
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+main {
+  background: #fff;
+  border-radius: 20px;
+  padding: 0;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  line-height: 24px;
+}
+
+li {
+  display: flex;
+  /*align-items: center;*/
+  gap: 10px;
+  margin-block: 30px;
+  width: 100%;
+  padding: 10px;
+}
+
+p {
+  max-width: 64ch;
+}
+
+.flex {
+  display: flex;
+  /*justify-content: space-between;*/
+}
+
+.header_notifications_count {
+  background: var(--chessClub);
+  color: #fff;
+  padding: 0 10px;
+  border-radius: 8px;
+  font-size: 20px;
+  display: inline-block;
+  height: 24px;
+  width: 36px;
+  text-align: center;
+}
+
+.notifications {
+  padding: 0 20px;
+}
+
+.notification_chess_club {
+  color: var(--chessClub);
+  font-family: PlusJakartaSansExtraBold;
+  cursor: pointer;
+}
+
+.notification_time {
+  color: var(--time);
+}
+
+.notification_dot {
+  display: inline-block;
+  background: var(--dot);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-inline-start: 3px;
+}
+
+.notification_image_div {
+  width: 50px;
+}
+
+.notification_picture_div {
+  width: 50px;
+  margin-left: auto;
+}
+
+.notification_name {
+  color: var(--name);
+  font-weight: bold;
+  margin-inline-end: 5px;
+  cursor: pointer;
+  font-family: PlusJakartaSansMedium;
+}
+
+.notification_link {
+  font-family: PlusJakartaSansExtraBold;
+  color: var(--darkGrayishBlue);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.notification_private_message {
+  border: 1px solid var(--darkGrayishBlue);
+  padding: 20px;
+  margin-block: 20px;
+  border-radius: 10px;
+  background: #fff;
+}
+
+button:hover,
+.notification_link:hover,
+.notification_name:hover {
+  color: var(--chessClub);
+}
+
+.notification_private_message:hover {
+  background: var(--lightGrayishBlue1);
+}
+
+.highlight {
+  background: var(--background);
+}
+
+.display_none {
+  display: none;
+}
+
+.notification_background {
+  background: var(--background);
+}
+
+@media(min-width:500px){
+  main {
+    width: 75vw;
+    padding: 20px;
+  }
+  header {
+    line-height: 32px;
+  }
+  h1 {
+    font-size: 32px;
+  }
+
+  .font_size_17 {
+    font-size: 17px;
+  }
+
+  .header_notifications_count {
+    height: 32px;
+    width: 42px;
+    font-size: 25px;
+  }
+  button {
+    font-size: 20px;
+  }
+}
+
+@media(min-width:900px){
+  main {
+    width: 50vw;
+  }
+}
